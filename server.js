@@ -1,0 +1,24 @@
+const express = require('express'),
+        app = express(),
+        cors = require('cors'),
+        path = require('path')
+
+app.use(express.static(path.join(__dirname, "client", "build")));
+app.use(cors())
+
+
+app.get(/^\/(?!api).*/, function(_, res) {
+    res.sendFile(
+        path.join(__dirname, "client", "build", "index.html"),
+        function (err) {
+            if(err) {
+                res.status(500).send(err)
+            }
+        }
+    )
+})
+
+// setting up server
+app.listen(9000, () => {
+    console.log("expense app loading on port: " + 9000)
+})
