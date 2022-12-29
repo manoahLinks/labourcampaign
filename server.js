@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express'),
         app = express(),
         cors = require('cors'),
@@ -20,6 +21,6 @@ app.get(/^\/(?!api).*/, function(_, res) {
 })
 
 // setting up server
-app.listen(9000, () => {
-    console.log("expense app loading on port: " + 9000)
+app.listen(process.env.PORT, () => {
+    console.log("expense app loading on port: " + process.env.PORT)
 })
