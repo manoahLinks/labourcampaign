@@ -9,7 +9,7 @@ class App extends Component {
     return (
       <Router>
         <div className='grid grid-cols-1 text-xs'>
-          <NavBar></NavBar>
+      
           <div className='grid grid-cols-1'>
             <Routes>
               <Route exact path={`/`} element={<LoginPage></LoginPage>}></Route>
