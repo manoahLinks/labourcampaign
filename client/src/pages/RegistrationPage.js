@@ -7,7 +7,7 @@ const RegisterationPage = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [name, setName] = useState('')
-    const [message, setMessage] = useState('')
+    const [message, setMessage] = useState(null)
     const [pending, setPending] = useState(false)
     const [error, setError] = useState(false)
     const [success, setSuccess] = useState(false)
@@ -21,11 +21,11 @@ const RegisterationPage = () => {
 
         console.log(details)
 
-        let response = await fetch(`/register`, {
+        let response = await fetch(`register`, {
             method: 'POST',
             headers: {
-                'Accept': 'application/json, text/plain, */*',
-                "Content-Type": "application/json"
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
            
             },
             body: JSON.stringify(details)

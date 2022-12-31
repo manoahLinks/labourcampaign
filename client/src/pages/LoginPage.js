@@ -8,7 +8,7 @@ const LoginPage = () => {
     const [password, setPassword] = useState('')
     const [pending, setPending] = useState(false)
     const [error, setError] = useState(false)
-    const [message, setMessage] = useState('')
+    const [message, setMessage] = useState(null)
     const [success, setSuccess] = useState(false)
 
     const handleSubmit = async (e) => {
@@ -20,11 +20,11 @@ const LoginPage = () => {
 
         console.log(details)
 
-        let response = await fetch(`/login`, {
+        let response = await fetch(`login`, {
             method: 'POST',
             headers: {
                 'Accept': 'application/json, text/plain, */*',
-                "Content-Type": "application/json"
+                'Content-Type': 'application/json'
                 
             },
             body: JSON.stringify(details)
@@ -39,7 +39,7 @@ const LoginPage = () => {
         if(response.ok){
             setEmail('')
             setPassword('')
-            console.log('sucessfully', json)
+            console.log('sucessfully')
             setMessage('welcome dear user, you are successfully logged into our platform')
             setPending(false)
             setError(false)
@@ -71,6 +71,7 @@ const LoginPage = () => {
                 <input 
                     type="password"
                     placeholder="password"
+                    className="appearance-none"
                     value={password}
                     onChange={(e)=>{setPassword(e.target.value)}}
                 />
