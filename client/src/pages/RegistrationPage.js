@@ -17,17 +17,22 @@ const RegisterationPage = () => {
 
         const details = {name, email, password}
 
-        let response = await fetch(`https://objective-mayer.204-93-216-231.plesk.page/register`, {
+        console.log(details)
+
+        let response = await fetch(`/register`, {
             method: 'POST',
-            headers:{
-                'Content-Type': 'application/json'
+         
+            headers: {
+                'Accept': 'application/json, text/plain, */*',
+                "Content-Type": "application/json"
+           
             },
             body: JSON.stringify(details)
         })
 
         if(!response.ok){
             setError(true)
-            console.log('api not reached')
+            console.log('could not register new user', response)
             setPending(false)
         }
         if(response.ok){
@@ -45,7 +50,7 @@ const RegisterationPage = () => {
         <div className="grid grid-cols-1 items-center p-2 m-2 bg-gray-100 mt-20 rounded-lg">
             {success && (<Navigate to={`/`} replace={true} />)}
             <div className="flex flex-col p-3 gap-y-2">
-                <div className="self-center shadow-md rounded-full p-2 -mt-12 bg-white">
+                <div className={`${pending && 'animate-bounce'} self-center shadow-md rounded-full p-2 -mt-12 bg-white`}>
                     <img className="w-32 rounded-full" src={require(`../assets/LabourParty.jpg`)} alt="" />
                 </div>
                 <h4 className="text-xl text-center font-bold text-green-500">Register <span className="text-gray-500">&</span>  <span className="text-red-500">Connect</span> </h4>
