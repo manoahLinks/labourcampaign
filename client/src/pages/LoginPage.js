@@ -63,6 +63,7 @@ const LoginPage = () => {
 
                 <input 
                     type="email"
+                    className="border-none"
                     placeholder="Email address"
                     value={email}
                     onChange={(e)=>{setEmail(e.target.value)}} 
@@ -71,7 +72,7 @@ const LoginPage = () => {
                 <input 
                     type="password"
                     placeholder="password"
-                    className="appearance-none"
+                    className="border-none rounded-md"
                     value={password}
                     onChange={(e)=>{setPassword(e.target.value)}}
                 />

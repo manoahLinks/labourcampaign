@@ -63,6 +63,7 @@ const RegisterationPage = () => {
 
                 <input 
                     type="text"
+                    className="border-none rounded-md"
                     placeholder="full name"
                     value={name}
                     onChange={(e)=>{setName(e.target.value)}} 
@@ -70,6 +71,7 @@ const RegisterationPage = () => {
                 
                 <input 
                     type="email"
+                    className="border-none rounded-md"
                     placeholder="Email address"
                     value={email}
                     onChange={(e)=>{setEmail(e.target.value)}} 
@@ -77,6 +79,7 @@ const RegisterationPage = () => {
 
                 <input 
                     type="password"
+                    className="border-none rounded-md"
                     placeholder="password"
                     value={password}
                     onChange={(e)=>{setPassword(e.target.value)}}
