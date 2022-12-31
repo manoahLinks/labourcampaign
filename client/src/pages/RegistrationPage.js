@@ -1,11 +1,13 @@
 import React, {useState} from "react"
 import { Link, Navigate } from "react-router-dom"
+import AlertBox from "../components/AlertBox"
 
 const RegisterationPage = () => {
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [name, setName] = useState('')
+    const [message, setMessage] = useState('')
     const [pending, setPending] = useState(false)
     const [error, setError] = useState(false)
     const [success, setSuccess] = useState(false)
@@ -21,7 +23,6 @@ const RegisterationPage = () => {
 
         let response = await fetch(`/register`, {
             method: 'POST',
-         
             headers: {
                 'Accept': 'application/json, text/plain, */*',
                 "Content-Type": "application/json"
@@ -34,6 +35,7 @@ const RegisterationPage = () => {
             setError(true)
             console.log('could not register new user', response)
             setPending(false)
+            setMessage('Request unsuccessful, check credentials and try again')
         }
         if(response.ok){
             setEmail('')
@@ -49,6 +51,7 @@ const RegisterationPage = () => {
     return ( 
         <div className="grid grid-cols-1 items-center p-2 m-2 bg-gray-100 mt-20 rounded-lg">
             {success && (<Navigate to={`/`} replace={true} />)}
+            {error && <AlertBox message={message}/>}
             <div className="flex flex-col p-3 gap-y-2">
                 <div className={`${pending && 'animate-bounce'} self-center shadow-md rounded-full p-2 -mt-12 bg-white`}>
                     <img className="w-32 rounded-full" src={require(`../assets/LabourParty.jpg`)} alt="" />
