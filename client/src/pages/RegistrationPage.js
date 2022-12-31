@@ -21,7 +21,7 @@ const RegisterationPage = () => {
 
         console.log(details)
 
-        let response = await fetch(`https://objective-mayer.204-93-216-231.plesk.page/register`, {
+        let response = await fetch(`/register`, {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
