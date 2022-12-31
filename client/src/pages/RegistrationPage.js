@@ -49,12 +49,12 @@ const RegisterationPage = () => {
     }
 
     return ( 
-        <div className="grid grid-cols-1 items-center p-2 m-2 bg-gray-100 mt-20 rounded-lg">
+        <div className="grid grid-cols-1 items-center p-2 m-2 bg-green-100 mt-20 rounded-lg">
             {success && (<Navigate to={`/`} replace={true} />)}
             {error && <AlertBox message={message}/>}
             <div className="flex flex-col p-3 gap-y-2">
-                <div className={`${pending && 'animate-bounce'} self-center shadow-md rounded-full p-2 -mt-12 bg-white`}>
-                    <img className="w-32 rounded-full" src={require(`../assets/LabourParty.jpg`)} alt="" />
+                <div className={`${pending && 'animate-bounce'} self-center shadow-md  p-2 -mt-12 bg-white`}>
+                    <img className="w-32 " src={require(`../assets/upnorth.png`)} alt="" />
                 </div>
                 <h4 className="text-xl text-center font-bold text-green-500">Register <span className="text-gray-500">&</span>  <span className="text-red-500">Connect</span> </h4>
                 <h4 className="font-light text-gray-500 gap-y-2">Hello patriotic Nigerian,<br/> its great to have you around, join the movement, Nigeria can be great again but it starts from you</h4>
