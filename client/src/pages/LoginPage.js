@@ -22,6 +22,7 @@ const LoginPage = () => {
 
         let response = await fetch(`https://objective-mayer.204-93-216-231.plesk.page/login`, {
             method: 'POST',
+            mode: 'no-cors',
             headers: {
                 'Accept': 'application/json, text/plain, */*',
                 'Content-Type': 'application/json'
