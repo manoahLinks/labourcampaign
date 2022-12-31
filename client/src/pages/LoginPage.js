@@ -40,6 +40,7 @@ const LoginPage = () => {
             setEmail('')
             setPassword('')
             console.log('sucessfully', json)
+            setMessage('welcome dear user, you are successfully logged into our platform')
             setPending(false)
             setError(false)
             setSuccess(true)
@@ -50,6 +51,7 @@ const LoginPage = () => {
     return ( 
         <div className="grid grid-cols-1 items-center p-2 m-2 bg-gray-100 mt-20 rounded-lg">
             {error && <AlertBox message={message}/>}
+            {success && <AlertBox message={message}/>}
             <div className="flex flex-col p-3 gap-y-2">
                 <div className={`${pending && 'animate-bounce'} self-center shadow-md rounded-full p-2 -mt-12 bg-white`}>
                     <img className="w-32 rounded-full" src={require(`../assets/LabourParty.jpg`)} alt="" />
