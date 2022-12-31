@@ -20,7 +20,7 @@ const LoginPage = () => {
 
         console.log(details)
 
-        let response = await fetch(`/login`, {
+        let response = await fetch(`https://objective-mayer.204-93-216-231.plesk.page/login`, {
             method: 'POST',
             headers: {
                 'Accept': 'application/json, text/plain, */*',
