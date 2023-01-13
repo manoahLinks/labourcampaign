@@ -11,7 +11,7 @@ export const useSignup = () => {
         setIsLoading(true)
         setError(null)
 
-        const response = await fetch(`register`, {
+        const response = await fetch(`https://objective-mayer.204-93-216-231.plesk.page/register`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
