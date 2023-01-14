@@ -11,7 +11,7 @@ export const useLogin = () => {
         setIsLoading(true)
         setError(null)
 
-        const response = await fetch(`https://objective-mayer.204-93-216-231.plesk.page/login`, {
+        const response = await fetch(` https://cors-anywhere-m.herokuapp.com/https://objective-mayer.204-93-216-231.plesk.page/login`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
