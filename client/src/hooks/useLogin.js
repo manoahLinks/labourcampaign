@@ -23,7 +23,7 @@ export const useLogin = () => {
 
         if(!response.ok) {
             setIsLoading(false)
-            setError(json.error)
+            setError(json.title || json.errors.email || json.errors.password)
         }
         if(response.ok) {
             // save the user to a database

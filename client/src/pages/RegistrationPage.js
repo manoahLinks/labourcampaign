@@ -7,7 +7,7 @@ const RegisterationPage = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [name, setName] = useState('')
-    const {signup, isLoading, error} = useSignup()
+    const {signup, isLoading, error, success} = useSignup()
     
 
     const handleSubmit = async (e) => {
@@ -18,6 +18,7 @@ const RegisterationPage = () => {
 
     return ( 
         <div className="grid grid-cols-1 items-center p-2 m-2 bg-green-100 mt-20 rounded-lg">
+            {success && (<Navigate to={`/`} replace={true} />)}
             <div className="flex flex-col p-3 gap-y-2">
                 <div className={`${isLoading && 'animate-bounce'} self-center shadow-md  p-2 -mt-12 bg-white`}>
                     <img className="w-32 " src={require(`../assets/upnorth.png`)} alt="" />

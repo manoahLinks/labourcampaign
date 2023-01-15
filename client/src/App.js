@@ -11,8 +11,8 @@ function App() {
   
   return (
     <Router>
-      <div className='flex flex-col text-xs items-center'>   
-        <div className='grid grid-cols-1 md:w-6/12 '>
+      <div className='flex flex-col text-xs md:text-sm items-center'>   
+        <div className='grid grid-cols-1 md:w-6/12 w-full '>
           <Routes>
             <Route exact path={`/`} element={!user ? <LoginPage/> : <Navigate to={`/home`} />} />
             <Route path={`/register`} element={!user ? <RegisterationPage/> : <Navigate to={`/`} />} />

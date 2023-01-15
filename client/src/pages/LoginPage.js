@@ -22,13 +22,13 @@ const LoginPage = () => {
                     <img className="w-32 " src={require(`../assets/upnorth.png`)} alt="" />
                 </div>
                 <h4 className="text-xl text-center font-bold text-green-500">Login <span className="text-gray-500">&</span>  <span className="text-red-500">Connect</span> </h4>
-                <h4 className="font-light text-gray-500 gap-y-2">Hello patriotic Nigerian,<br/> its great to have you around, join the movement, Nigeria can be great again but it starts from you</h4>
                 {error && <div className="flex p-2 border border-red-500 items-center gap-x-2 bg-red-100 text-red-500 rounded-md">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m0-10.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.75c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.75h-.152c-3.196 0-6.1-1.249-8.25-3.286zm0 13.036h.008v.008H12v-.008z" />
                     </svg>
                     <h4>{error}</h4>
                 </div>}
+                <h4 className="font-light text-gray-500 gap-y-2">Hello patriotic Nigerian,<br/> its great to have you around, join the movement, Nigeria can be great again but it starts from you</h4>
             </div>
             <form className="flex flex-col gap-y-2 p-3" onSubmit={handleSubmit}>
 
